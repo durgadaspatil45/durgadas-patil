@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="180" height="40" rx="8" ry="8" fill="#1DA1F2" filter="url(#glow)"/>
+  <text x="50" y="25" font-size="18" fill="white" font-family="Arial, sans-serif">Twitter</text>
+  <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" x="10" y="5" height="30px"/>
+</svg>
