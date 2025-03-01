@@ -66,9 +66,12 @@ jobs:
           </svg>' > assets/gmail-badge.svg
 
       - name: Commit and Push Changes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "durgadaspatil45"
-          git config --global user.email "durgadaspatil45@gmail.com"
-          git add assets/linkedin-badge.svg assets/twitter-badge.svg assets/gmail-badge.svg
-          git commit -m "Update glowing social media badges" || echo "No changes to commit"
-          git push
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "actions@github.com"
+            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/durgadaspatil45/durgadaspatil45.git
+            git add assets/*.svg
+            git commit -m "Update glowing badges" || echo "No changes to commit"
+            git push origin master
